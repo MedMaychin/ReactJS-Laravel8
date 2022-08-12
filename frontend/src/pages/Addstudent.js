@@ -21,7 +21,16 @@ export class Addstudent extends Component {
     saveStudent = async (e) => {
         e.preventDefault();
 
-        const res = await axios.post('/api/add-student', this.state);
+        const res = await axios.post('http://127.0.0.1:8000/api/add-student', this.state);
+
+        if (res.data.status === 200) {
+            console.log(res.data.message);
+            this.setState({
+                name: '',
+                class: '',
+                phone: ''
+            });
+        }
     }
     render() {
         return (
@@ -35,19 +44,36 @@ export class Addstudent extends Component {
                                 </h4>
                             </div>
                             <div className='card-body'>
-                                <form onSubmit={saveStudent}>
+                                <form onSubmit={this.saveStudent}>
+
                                     <div class="form-group mb-3">
                                         <label>Name</label>
-                                        <input type="text" name="name" value={this.state.name} className="form-control" placeholder="Student name" onChange={this.handleInput} />
+                                        <input type="text" name="name"
+                                            className="form-control"
+                                            placeholder="Student name"
+                                            onChange={this.handleInput}
+                                            value={this.state.name}
+                                        />
                                     </div>
+
                                     <div class="form-group mb-3">
                                         <label>Class</label>
-                                        <input type="text" name="class" value={this.state.class} className="form-control" placeholder="Student Class" onChange={this.handleInput} />
+                                        <input type="text" name="class"
+                                            placeholder="Student Class"
+                                            className="form-control"
+                                            value={this.state.class}
+                                            onChange={this.handleInput} />
                                     </div>
+
                                     <div class="form-group mb-3">
                                         <label>Phone</label>
-                                        <input type="text" name="phone" value={this.state.phone} className="form-control" placeholder="Phone" onChange={this.handleInput} />
+                                        <input type="text" name="phone"
+                                            className="form-control"
+                                            placeholder="Phone"
+                                            value={this.state.phone}
+                                            onChange={this.handleInput} />
                                     </div>
+
                                     <div class="form-group mb-3">
                                         <button type="submit" class="btn btn-success">Save</button>
                                     </div>
