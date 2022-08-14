@@ -31,19 +31,18 @@ export class Student extends Component {
           </td>
         </tr>;
     } else {
-      student_HTMLTABLE = this.state.students.map( (item) => {
+      student_HTMLTABLE = this.state.students.map((item) => {
         return (
           <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.class}</td>
-              <td>{item.phone}</td>
-              <td>
-                <Link to={`edit-student/${item.id}}`} className='btn btn-info'>Edite</Link>
-              </td>
-              <td >
-                <button className='btn btn-danger' type='button'>Delete</button>
-              </td>
+            <td>{item.id}</td>
+            <td>{item.name}</td>
+            <td>{item.class}</td>
+            <td>{item.phone}</td>
+            <td>
+              <Link to={`edit-student/${item.id}}`} className='btn btn-info m-2'>Edit</Link>
+              <button className='btn btn-danger' type='button'>Delete</button>
+            </td>
+            
           </tr>
         );
       });
@@ -72,7 +71,7 @@ export class Student extends Component {
                     </tr>
                   </thead>
                   <tbody>
-
+                    {student_HTMLTABLE}
                   </tbody>
                 </table>
               </div>
