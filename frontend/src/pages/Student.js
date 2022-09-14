@@ -60,8 +60,8 @@ export class Student extends Component {
                 </h4>
               </div>
               <div className='card-body'>
-                <table class="table table-striped table-bordered table-responsive">
-                  <thead class="thead-inverse">
+                <table className="table table-striped table-bordered table-responsive">
+                  <thead className="thead-inverse">
                     <tr>
                       <th>ID</th>
                       <th>NAME</th>

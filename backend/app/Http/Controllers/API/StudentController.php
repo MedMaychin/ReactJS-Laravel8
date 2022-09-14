@@ -26,7 +26,7 @@ class StudentController extends Controller
         $student->name = $request->input('name');
         $student->class = $request->input('class');
         $student->phone = $request->input('phone');
-        $student->save();
+        $student->save(); 
 
 
         return response()->json([
@@ -40,11 +40,20 @@ class StudentController extends Controller
 
         $student  =   Student::find($id);
 
-        return response()->json([
-            'status' => 200,
-            'student' => $student,
-        ]);
-
+        if($student)
+        {
+            return response()->json([
+                'status'=> 200,
+                'student' => $student,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=> 404,
+                'message' => 'No Student ID Found',
+            ]);
+        }
 
     }
 

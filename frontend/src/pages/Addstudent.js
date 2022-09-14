@@ -46,7 +46,7 @@ export class Addstudent extends Component {
                             <div className='card-body'>
                                 <form onSubmit={this.saveStudent}>
 
-                                    <div class="form-group mb-3">
+                                    <div className="form-group mb-3">
                                         <label>Name</label>
                                         <input type="text" name="name"
                                             className="form-control"
@@ -56,7 +56,7 @@ export class Addstudent extends Component {
                                         />
                                     </div>
 
-                                    <div class="form-group mb-3">
+                                    <div className="form-group mb-3">
                                         <label>Class</label>
                                         <input type="text" name="class"
                                             placeholder="Student Class"
@@ -65,7 +65,7 @@ export class Addstudent extends Component {
                                             onChange={this.handleInput} />
                                     </div>
 
-                                    <div class="form-group mb-3">
+                                    <div className="form-group mb-3">
                                         <label>Phone</label>
                                         <input type="text" name="phone"
                                             className="form-control"
@@ -74,8 +74,8 @@ export class Addstudent extends Component {
                                             onChange={this.handleInput} />
                                     </div>
 
-                                    <div class="form-group mb-3">
-                                        <button type="submit" class="btn btn-success">Save</button>
+                                    <div className="form-group mb-3">
+                                        <button type="submit" className="btn btn-success">Save</button>
                                     </div>
                                 </form>
                             </div>

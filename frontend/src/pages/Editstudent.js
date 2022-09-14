@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link   } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export class Editstudent extends Component {
@@ -18,12 +18,12 @@ export class Editstudent extends Component {
     });
   }
 
-  async componentDidMount() { 
-    const stud_id =  this.props.match.params.id;
-    
+  async componentDidMount() {
+    const stud_id = this.props.match.params.id;
+
     const res = await axios.get(`http://127.0.0.1:8000/api/edit-student/${stud_id}`);
 
-    if (res.data.status ===200) {
+    if (res.data.status === 200) {
       this.setState({
         name: res.data.student.name,
         class: res.data.student.class,
@@ -60,7 +60,7 @@ export class Editstudent extends Component {
               <div className='card-body'>
                 <form onSubmit={this.updateStudent}>
 
-                  <div class="form-group mb-3">
+                  <div className="form-group mb-3">
                     <label>Name</label>
                     <input type="text" name="name"
                       className="form-control"
@@ -70,7 +70,7 @@ export class Editstudent extends Component {
                     />
                   </div>
 
-                  <div class="form-group mb-3">
+                  <div className="form-group mb-3">
                     <label>Class</label>
                     <input type="text" name="class"
                       placeholder="Student Class"
@@ -79,7 +79,7 @@ export class Editstudent extends Component {
                       onChange={this.handleInput} />
                   </div>
 
-                  <div class="form-group mb-3">
+                  <div className="form-group mb-3">
                     <label>Phone</label>
                     <input type="text" name="phone"
                       className="form-control"
@@ -88,8 +88,8 @@ export class Editstudent extends Component {
                       onChange={this.handleInput} />
                   </div>
 
-                  <div class="form-group mb-3">
-                    <button type="submit" class="btn btn-success">Update</button>
+                  <div className="form-group mb-3">
+                    <button type="submit" className="btn btn-success">Update</button>
                   </div>
                 </form>
               </div>
